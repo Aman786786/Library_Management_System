@@ -1,0 +1,175 @@
+
+#include<string.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+
+
+struct books{
+    int id;
+    char bookName[50];
+    char category[50];
+    int price;
+    int totalQuantity;
+    int available;
+}b;
+
+struct student{
+    int id;
+    char sName[50];
+    char sCity[50];
+    int sNumber;
+    int sDepartmentId;
+    char sDepartmentName[50];
+}s;
+
+
+void printMessageCenter(const char* message)
+{
+    int len =0;
+    int pos = 0;
+    //calculate how many space need to print
+    len = (78 - strlen(message))/2;
+    printf("\t\t\t");
+    for(pos =0 ; pos < len ; pos++)
+    {
+        //print space
+        printf(" ");
+    }
+    //print message
+    printf("%s",message);
+}
+void headMessage(const char *message)
+{
+    
+    printf("\t\t\t###########################################################################");
+    printf("\n\t\t\t############                                                   ############");
+    printf("\n\t\t\t############          Library management System                ############");
+    printf("\n\t\t\t############                                                   ############");
+    printf("\n\t\t\t###########################################################################");
+    printf("\n\t\t\t---------------------------------------------------------------------------\n");
+    printMessageCenter(message);
+    printf("\n\t\t\t----------------------------------------------------------------------------");
+}
+void welcomeMessage()
+{
+    headMessage("KEEP CALM AND READ A BOOK");
+    printf("\n\n\n\n\n");
+    printf("\n\t\t\t  **-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**\n");
+    printf("\n\t\t\t        =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+    printf("\n\t\t\t        =                 WELCOME                   =");
+    printf("\n\t\t\t        =                   TO                      =");
+    printf("\n\t\t\t        =                 LIBRARY                   =");
+    printf("\n\t\t\t        =               MANAGEMENT                  =");
+    printf("\n\t\t\t        =                 SYSTEM                    =");
+    printf("\n\t\t\t        =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+    printf("\n\t\t\t  **-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**-**\n");
+    printf("\n\n\n\t\t\t Enter any key to continue.....");
+   
+}
+
+
+//1Add Student details
+void addStudentInDataBase(){
+    
+ }
+
+//2Add Book 
+ void addBookInDataBase(){
+     
+ }
+
+ 
+ //3view Student
+ void viewStudents(){
+// write Login Here 
+}
+
+
+//4View Book Details
+void  viewBookDetails(){
+     
+ }
+ 
+//5Add Issue Details
+void  addIssueDeatils(){
+    
+ }
+
+//6 Add Retuen Details
+void addRetuenDetails(){
+    
+    
+}
+
+
+//7ViewIssue Details
+void viewIssueDetails(){
+    
+}
+
+
+void menu()
+{
+    int choice = 0;
+    do
+    {
+       
+        printf("\n\n\n\t\t\t1.Add Student/ Faculty Details");
+        printf("\n\t\t\t2.Add Books");
+        printf("\n\t\t\t3.View Student");
+        printf("\n\t\t\t4.View Book Details");
+        printf("\n\t\t\t5.Add Issue Details");
+        printf("\n\t\t\t6.Add Return Details");
+        printf("\n\t\t\t7.View Issue/ Return Details");
+        printf("\n\t\t\t0.Exit");
+        printf("\n\n\n\t\t\tEnter choice => ");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+        case 1:
+            addStudentInDataBase();
+            break;
+        case 2:
+            addBookInDataBase();
+            break;
+        case 3:
+            viewStudents();
+            break;
+        case 4:
+            viewBookSetails();
+            break;
+        case 5:
+            updateCredential();
+            break;
+        case 6:
+            addRetuenDetails();
+            break;
+            
+        case 7:
+            viewIssueDetails();
+            break;
+        case 0:
+            printf("\n\n\n\t\t\t\tThank you!!!\n\n\n\n\n");
+            exit(1);
+            break;
+        default:
+            printf("\n\n\n\t\t\tINVALID INPUT!!! Try again...");
+        }                                            //Switch Ended
+    }
+    while(choice!=0);                                        //Loop Ended
+}
+
+
+
+int main()
+{
+ 
+    welcomeMessage();
+    menu();
+    
+    return 0;
+  
+    
+}
